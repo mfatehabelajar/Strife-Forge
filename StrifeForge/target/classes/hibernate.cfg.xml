@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Konfigurasi Koneksi Database MySQL XAMPP -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/db_app?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+
+        <!-- Dialect Database -->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Menampilkan SQL ke Console (opsional untuk debugging) -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Pengaturan otomatis tabel database -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Daftarkan Entity Model Hibernate -->
+        <mapping class="strifeforge.model.Member"/>
+        <mapping class="strifeforge.model.Paket"/>
+        <mapping class="strifeforge.model.Pembayaran"/>
+        <mapping class="strifeforge.model.Absensi"/>
+        <mapping class="strifeforge.model.User"/>
+    </session-factory>
+</hibernate-configuration>
